@@ -44,7 +44,7 @@
                     is_alive(uv+float2(-du,  0)) +
                     is_alive(uv+float2(-du,+dv)) +
                     is_alive(uv+float2(  0,-dv)) +
-                    // is_alive(uv+float2(  0,  0)) +// 自分自陣は取り除く
+                    // is_alive(uv+float2(  0,  0)) +// 自分自身は取り除く
                     is_alive(uv+float2(  0,+dv)) +
                     is_alive(uv+float2(+du,-dv)) +
                     is_alive(uv+float2(+du,  0)) +
