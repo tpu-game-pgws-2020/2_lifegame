@@ -36,7 +36,7 @@
                 float dv = 1.0 / _CustomRenderTextureHeight;
 
                 // 返り値
-                float3 ret = tex2D(_SelfTexture2D, uv).rgb;;// tex2D(_SelfTexture2D, uv).rgb;
+                float3 ret = tex2D(_SelfTexture2D, uv).rgb;
 
                 // 隣接するセルの数
                 int num_alive = 
@@ -50,7 +50,7 @@
                     is_alive(uv+float2(+du,  0)) +
                     is_alive(uv+float2(+du,+dv));
 
-                if(0.5 < is_alive(uv))
+                if(is_alive(uv) == 1)
                 {// 自分が生きている
                     // 生存：隣接する生きたセルが2つか3つならば、次の世代でも生存する。
                     if(2 == num_alive || num_alive == 3) ret = tex2D(_SelfTexture2D, uv).rgb;
