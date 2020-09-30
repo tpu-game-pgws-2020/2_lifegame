@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture: {fileID: 8600000, guid: 11e817e014204dc4abdfe9976d83729f, type: 2}
-  sample_float: 10
+  sample_float: 11
 --- !u!850595691 &2071382302
 LightingSettings:
   m_ObjectHideFlags: 0

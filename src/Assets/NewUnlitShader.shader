@@ -50,12 +50,31 @@
                     is_alive(uv+float2(+du,  0)) +
                     is_alive(uv+float2(+du,+dv));
 
+                int num_alive2 = num_alive;
+
+                /*if (num_alive2 == 2)
+                {
+                    ret = float3(0, 1, 1);
+                }*/
+                /*if (num_alive2 == 3)
+                {
+                    ret = float3(0, 1, 1);
+                }*/
+                if (num_alive2 == 4)
+                {
+                    ret = float3(0, 1, 1);
+                }
+
                 if(is_alive(uv) == 1)
                 {// 自分が生きている
                     // 生存：隣接する生きたセルが2つか3つならば、次の世代でも生存する。
                     if(2 == num_alive || num_alive == 3) ret = tex2D(_SelfTexture2D, uv).rgb;
                     // 過疎：隣接する生きたセルが1つ以下ならば、過疎により死滅する。
                     // todo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    if (num_alive <= 1)
+                    {
+                        ret = float3(0, 0, 0);
+                    }
                     // 過密：隣接する生きたセルが4つ以上ならば、過密により死滅する。
                     if(4 <= num_alive) ret = float3(0,0,0);// 黒
                 }else{// 自分が死んでいる
@@ -63,7 +82,7 @@
                     if(3 == num_alive){
                         ret = tex2D(_RandomMap, uv * _Time).rgb;// ランダムな値にする
                         // 生成したものの暗さが暗かったら明るくする
-                        float lum = 0.2126*ret.r + 0.7152*ret.g + 0.0722*ret.b;
+                        float lum = 0.2126 * ret.r + 0.7152 * ret.g + 0.0722 * ret.b;
                         if(lum < 0.5) ret += 0.5;
                     }
                 }
