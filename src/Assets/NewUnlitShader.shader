@@ -56,12 +56,13 @@
                     if(2 == num_alive || num_alive == 3) ret = tex2D(_SelfTexture2D, uv).rgb;
                     // 過疎：隣接する生きたセルが1つ以下ならば、過疎により死滅する。
                     // todo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					if (1 >= num_alive) ret = float3(0, 0, 0);
                     // 過密：隣接する生きたセルが4つ以上ならば、過密により死滅する。
-                    if(4 <= num_alive) ret = float3(0,0,0);// 黒
-                }else{// 自分が死んでいる
-                    // 誕生：隣接する生きたセルがちょうど3つあれば、次の世代が誕生する。
-                    if(3 == num_alive){
-                        ret = tex2D(_RandomMap, uv * _Time).rgb;// ランダムな値にする
+                    if(4 <= num_alive) ret = float3(0,0,0);
+                }else{// 自分が死んでいる1
+                    // 誕生：隣接する生きたセルがちょうど3つか6つあれば、次の世代が誕生する。
+                    if(3 == num_alive || 6== num_alive){
+						ret = tex2D(_RandomMap, uv * _Time).rgb;// ランダムな値にする
                         // 生成したものの暗さが暗かったら明るくする
                         float lum = 0.2126*ret.r + 0.7152*ret.g + 0.0722*ret.b;
                         if(lum < 0.5) ret += 0.5;
