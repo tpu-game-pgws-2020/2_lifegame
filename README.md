@@ -4,6 +4,8 @@
 また、独自の実装を追加してください
 
 ![結果画像](result.png)
+![cap1](https://user-images.githubusercontent.com/38420405/94819497-4e1bef80-043a-11eb-816d-5273970dd1ac.PNG)
+
 
 # 拡張した点
 
