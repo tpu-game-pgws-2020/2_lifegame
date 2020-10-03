@@ -5,13 +5,13 @@
 
 ![結果画像](result.png)
 ![cap1](https://user-images.githubusercontent.com/38420405/94819497-4e1bef80-043a-11eb-816d-5273970dd1ac.PNG)
-
+![cap2](https://user-images.githubusercontent.com/38420405/94989398-7e38cf00-05af-11eb-8dba-b7b33613b70f.PNG)
 
 # 拡張した点
 
 -lifegame-過疎-を追加
 -思ったよりも早く死んでしまうため-ラッキー-を追加
--
+-生まれてくる色を明るめにして徐々に暗くしていくことで老いを表現
 -
 
 # 進め方
